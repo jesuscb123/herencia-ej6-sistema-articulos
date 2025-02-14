@@ -1,14 +1,18 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+fun mostrarArticulos(listaArticulos: Array<Articulo>){
+    for (articulo in listaArticulos){
+        articulo.promocionNavidad(20.0)
+        println(articulo)
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
     }
+
+}
+
+fun main(){
+    val articulo1 = Articulo("zapatillas Nike",25.0)
+    val articulo2 = Articulo("PSP",45.0)
+    val ordenadorGaming = Ordenador("pc READY", 1299.99, tipoOrdenador = TipoOrdenador.GAMING)
+    val ordenadorBasico = Ordenador("pc Basic", 399.99)
+    val listaArticulos = arrayOf(articulo1,articulo2,ordenadorGaming,ordenadorBasico)
+    mostrarArticulos(listaArticulos)
+
 }
